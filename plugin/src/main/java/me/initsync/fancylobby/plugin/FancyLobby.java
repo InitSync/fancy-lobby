@@ -9,7 +9,7 @@ import me.initsync.fancylobby.api.model.manager.ScoreboardManager;
 import me.initsync.fancylobby.api.model.manager.TabManager;
 import me.initsync.fancylobby.plugin.actions.SoundAction;
 import me.initsync.fancylobby.plugin.listener.PlayerJoinListener;
-import me.initsync.fancylobby.plugin.loaders.EventFactory;
+import me.initsync.fancylobby.plugin.factory.EventFactory;
 import me.initsync.fancylobby.plugin.managers.ScoreboardManagerImpl;
 import me.initsync.fancylobby.plugin.managers.SimpleActionManager;
 import me.initsync.fancylobby.plugin.managers.SimpleAdaptManager;
