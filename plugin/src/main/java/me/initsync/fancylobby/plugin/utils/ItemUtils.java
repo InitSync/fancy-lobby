@@ -8,7 +8,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.Arrays;
 import java.util.Objects;
 
-public interface ItemFactory {
+public interface ItemUtils {
 	static Builder of(Material material) {
 		return new Builder(material);
 	}
