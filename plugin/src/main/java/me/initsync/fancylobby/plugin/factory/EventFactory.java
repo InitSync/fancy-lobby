@@ -1,4 +1,4 @@
-package me.initsync.fancylobby.plugin.loaders;
+package me.initsync.fancylobby.plugin.factory;
 
 import me.initsync.fancylobby.plugin.FancyLobby;
 import org.bukkit.event.Listener;
