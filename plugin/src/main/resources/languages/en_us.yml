@@ -1,0 +1,135 @@
+# English Plugin Content.
+# -- Main Plugin Messages --
+no-perm: "<prefix> &cYou don't have permission for it!"
+no-command: "<prefix> &cThat sub-command isn't available yet!"
+no-file: "<prefix> &cThe file specified doesn't exists!"
+
+common-help:
+  - "&a&lFancyLobby &8[&71.0.0&8] | &7Player Available Commands"
+  - "&7 - &b/fly [player] &fToggles the flight-mode for you or for another player."
+  - "&7 - &b/gamemode <type> [player] &fChanges the gamemode for you or for another player."
+  - "&7 - &b/alert <message> &fSends a message to all the server."
+  - "&7 - &b/scorebord <title/toggle> &fChanges the scoreboard title or hide it."
+  - "&7 - &b/tablist &fShows/Hides the tab-list."
+  - "&7 - &b/customcommands <register/unregister/description> &fRegister/Unregister or shows the custom-command description."
+  - "&7 - &b[?] &fThis is a custom command for the plugin, specify the command for execute it!"
+
+admin-help:
+  - "&a&lFancyLobby &8[&71.0.0&8] | &cAdmin &7Available Commands"
+  - "&7 - &b/fancylobby help &fShows this message."
+  - "&7 - &b/fancylobby reload [file] &fReload all the configurations or just one."
+
+reload-all: "<prefix> &aThe plugin has been &ereloaded &asuccessful!"
+reload-config: "<prefix> &aThe &6configuration &ahas been &ereloaded &asuccessful!"
+reload-commands: "<prefix> &aThe &6custom-commands &ahas been &ereloaded &asuccessful!"
+reload-tab-list: "<prefix> &aThe &6tab-list &ahas been &ereloaded &asuccessful!"
+reload-world: "<prefix> &aThe &6world-configurations &ahas been &ereloaded &asuccessful!"
+reload-items: "<prefix> &aThe &6custom-items &ahas been &ereloaded &asuccessful!"
+reload-scoreboard: "<prefix> &aThe &6scoreboard &ahas been &ereloaded &asuccessful!"
+reload-en_us: "<prefix> &aThe &6english-language &ahas been &ereloaded &asuccessful!"
+# -- Main Plugin Messages --
+
+# Message if the player specified is disconnected.
+offline-target: "<prefix> &cThat player isn't connected now!"
+
+# -- Flight Mode Messages --
+flight-mode-enabled: "<prefix> &aThe &eflight-mode &ahas been enabled!"
+flight-mode-disabled: "<prefix> &cThe &eflight-mode &chas been disabled!"
+# -- Flight Mode Messages -
+
+# -- Gamemode Messages --
+gamemode-usage: "<prefix> &fSpecify the &egamemode &ffor you. &aAlso, you can specify a player for change her gamemode."
+gamemode-survival: "<prefix> &aYour gamemode has been changed to &eSurvival&a!"
+gamemode-creative: "<prefix> &aYour gamemode has been changed to &eCreative&a!"
+gamemode-adventure: "<prefix> &aYour gamemode has been changed to &eAdventure&a!"
+gamemode-spectator: "<prefix> &aYour gamemode has been changed to &eSpectator&a!"
+gamemode-survival-target: "<prefix> &eThe gamemode for the player &3<target-name> &ehas been changed to &6Survival&e!"
+gamemode-creative-target: "<prefix> &eThe gamemode for the player &3<target-name> &ehas been changed to &6Creative&e!"
+gamemode-adventure-target: "<prefix> &eThe gamemode for the player &3<target-name> &ehas been changed to &6Adventure&e!"
+gamemode-spectator-target: "<prefix> &eThe gamemode for the player &3<target-name> &ehas been changed to &6Spectator&e!"
+
+# -- Alert Messages --
+alert-usage: "<prefix> &fSpecify the &emessage &fto send!"
+alert-format: "&c&lALERT &8> &f"
+
+# Scoreboard English Configurations.
+scoreboard:
+  # -- Scoreboard Messages --
+  usage: "<prefix> &fTo change the scoreboard title uses &7-> &e[title] &8| &fFor toggle the visibility &7-> &e[toggle]"
+  enabled: "<prefix> &aThe scoreboard has been &eenabled&a!"
+  disabled: "<prefix> &cThe scoreboard has been &edisabled&c!"
+  title-changed: "<prefix> &fThe &escoreboard-title &fhas been changed to &7-> &a<scoreboard-title>"
+  title-warning: "<prefix> &cYou can't modify the scoreboard title if the &eanimated-title &cis on!"
+  # -- Scoreboard Messages --
+
+  # Scoreboard Animation Lines.
+  title-animated:
+    - ""
+    - ""
+    - ""
+    - ""
+
+  # Scoreboard Default Title.
+  default-title: ""
+
+  # Scoreboard Content.
+  # Allows max 15 lines.
+
+  # NOTE: 1.12 or lower accepts only 30 length chars.
+  lines: |-
+    &l
+    &l
+    &l
+    &l
+    &l
+    &l
+    &l
+    &l
+
+# -- Tab-List English Configurations --
+tab-list:
+  # -- Tab-List Messages --
+  enabled: "<prefix> &aThe tab-list has been &eenabled&a!"
+  disabled: "<prefix> &cThe tab-list has been &edisabled&c!"
+  # -- Tab-List Messages --
+
+  # Tab-List Header Text.
+  header: ""
+
+  # Tab-List Footer Text.
+  footer: ""
+
+# -- Custom Items English Configurations --
+items:
+  # English Configuration for 'example' custom item.
+  example:
+    # Item Display Name.
+    display-name: "&bExample &7| &fRight Click"
+
+    # Item Lore Text.
+    lore: |-
+      &fThis is an &7example custom item&f!
+
+    # Items Actions.
+    actions:
+      - "[SOUND] ENTITY_EXPERIENCE_ORB_PICKUP;1;1"
+      - "[POTION_EFFECT] SPEED;100;2"
+
+# -- Custom Commands English Configurations --
+commands:
+  # Configuration for 'example' custom command.
+  example:
+    # Custom Command Identifier/Name.
+    # Don't add the '/' character if isn't necessary.
+    id: example
+
+    # Custom Command Permission.
+    permission: "fancylobby.custom-cmd.example"
+
+    # Custom Command Description.
+    description: "This command gives you [SPEED II] and sends a title!"
+
+    # Custom Command Actions.
+    actions:
+      - "[POTION_EFFECT] SPEED;100;2"
+      - "[TITLE] &fYou has executed the &eexample &fcommand!;&fHas received &bSPEED II;20;60;20"

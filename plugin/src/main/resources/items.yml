@@ -1,0 +1,20 @@
+# NOTE: The custom-items content can be customized into the language files of plugin!
+# Do you want to enable the custom items?
+allow: true
+
+# Do you want to specify worlds where this items can appear and be used?
+allow-some-worlds: true
+
+# Worlds where the custom-items can appear.
+allowed-worlds: [ world ]
+
+# -- Custom Items --
+example:
+  # Item Material Type.
+  material: BOOK
+
+  # Item Amount.
+  amount: 1
+
+  # Item Slot Position.
+  slot: 4

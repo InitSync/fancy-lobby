@@ -1,0 +1,9 @@
+# NOTE: The commands content can be customized into the language files of plugin!
+# Do you want to allow the custom-commands?
+allow: true
+
+# Do you want to specify worlds where this commands can be used?
+allow-some-worlds: true
+
+# Worlds where the commands can be used.
+allowed-worlds: [ world ]

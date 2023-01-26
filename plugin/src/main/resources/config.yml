@@ -1,0 +1,60 @@
+config:
+  # Plugin Messages Prefix.
+  prefix: "&aFancyLobby &8>"
+
+  # Default language for the new players.
+  # Languages: en_us | es_es
+  #
+  # en_us: This is the English language adaption.
+  # es_es: This is the Spanish language adaption.
+  default-lang: en_us
+
+  storage:
+    # Select the storage type for the plugin.
+    # Types: FILE | DB
+    #
+    # FILE: Uses an SQLite database for storage the plugin data.
+    # DB: Uses a database (MySQL) for storage the plugin data.
+    type: FILE
+
+    # -- Database Connection Parameters --
+    database:
+      # Host IP Address.
+      host: 127.0.0.1
+
+      # Port Number.
+      port: 3306
+
+      # Database Name.
+      name: fancylobby-data
+
+      # Database Username.
+      username: root
+
+      # Database Password
+      password: ''
+
+  sounds:
+    # Sounds ID's
+    no-perm: ENTITY_ITEM_BREAK
+    reload: UI_BUTTON_CLICK
+    world-protection: BLOCK_NOTE_BLOCK_PLING
+    scoreboard-toggle: ENTITY_EXPERIENCE_ORB_PICKUP
+    tab-list-toggle: BLOCK_CHEST_OPEN
+
+    # Sounds Volume Level.
+    volume-level: 1
+
+  titles:
+    # Do you want to enable the default titles?
+    allow: true
+
+    # -- Titles Time Parameters --
+    # Title In-Coming Time.
+    fade-in: 20
+
+    # Title Staying Time.
+    stay: 60
+
+    # Title Outing Time.
+    fade-out: 20

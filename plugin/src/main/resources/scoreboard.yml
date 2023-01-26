@@ -1,0 +1,20 @@
+# NOTE: The scoreboard content can be customized into the language files of plugin!
+# Do you want to enable the scoreboard feature?
+allow: true
+
+# Worlds list where the scoreboard can appear.
+# NOTE: This is only for the 'GLOBAL' mode.
+allowed-worlds: [ world ]
+
+# (BETA) Do you want to use the animated-title?
+allow-animated-title: true
+
+# Refresh rate for the title.
+# Reference: 20 ticks -> 1 second.
+#
+# NOTE: The refresh-rate must be minor than the animated-title list size to avoid errors!
+title-refresh-rate: 7
+
+# Refresh rate for the scoreboard body.
+# Reference: 20 ticks -> 1 second.
+body-refresh-rate: 20

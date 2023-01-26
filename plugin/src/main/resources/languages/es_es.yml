@@ -1,0 +1,135 @@
+# Spanish Plugin Content.
+# -- Main Plugin Messages --
+no-perm: "<prefix> &c¡No tienes permiso para eso!"
+no-command: "<prefix> &c¡Ese sub-comando aún no está disponible!"
+no-file: "<prefix> &c¡El archivo specificado no existe!"
+
+common-help:
+  - "&a&lFancyLobby &8[&71.0.0&8] | &7Comandos para Jugadores"
+  - "&7 - &b/fly [jugador] &fAlterna el modo de vuelo para ti, o para otro jugador."
+  - "&7 - &b/gamemode <tipo> [jugador] &fCambia el modo de juego para ti o para otro jugador."
+  - "&7 - &b/alert <mensaje> &fEnvía un mensaje a todo el servidor."
+  - "&7 - &b/scorebord <title/toggle> &fCambia el título de la Scoreboard u ocultala."
+  - "&7 - &b/tablist &fMuestra/Oculta el tab-list."
+  - "&7 - &b/customcommands <register/unregister/description> &fRegister/Unregister or shows the custom-command description."
+  - "&7 - &b[?] &fEsto es un comando custom del complemento, especifica el comando para ejecutarlo!"
+
+admin-help:
+  - "&a&lFancyLobby &8[&71.0.0&8] | &7Comandos para &cAdmin"
+  - "&7 - &b/fancylobby help &fMuestra este mismo mensaje."
+  - "&7 - &b/fancylobby reload [file] &fRecarga todas las configuraciones o sólo una."
+
+reload-all: "<prefix> &aEl complemento ha sido &erecargado &aexitosamente!"
+reload-config: "<prefix> &aLa &6configuración &aha sido &erecargada &aexitosamente!"
+reload-commands: "<prefix> &aLos &6comandos custom &ahan sido &erecargados &aexitosamente!"
+reload-tab-list: "<prefix> &aEl &6tab-list &aha sido &erecargado &aexitosamente!"
+reload-world: "<prefix> &aLa &6configuración del mundo &aha sido &erecargada &aexitosamente!"
+reload-items: "<prefix> &aLos &6items &ahan sido &erecargados &aexistosamente!"
+reload-scoreboard: "<prefix> &aLa &6scoreboard &aha sido &erecargada &aexistosamente!"
+reload-en_us: "<prefix> &aEl &6lenguaje inglés &aha sido &erecargado &aexistosamente!"
+# -- Main Plugin Messages --
+
+# Message if the player specified is disconnected.
+offline-target: "<prefix> &c¡Ese jugador ahora no está conectado!"
+
+# -- Flight Mode Messages --
+flight-mode-enabled: "<prefix> &a¡El &emodo de vuelo &aha sido activado!"
+flight-mode-disabled: "<prefix> &c¡El &emodo de vuelo &cha sido desactivado!"
+# -- Flight Mode Messages -
+
+# -- Gamemode Messages --
+gamemode-usage: "<prefix> &fEspecifica el &emodo de juego &fpara ti. &aTambién, puedes specificar un jugador para cambiar su modo de juego."
+gamemode-survival: "<prefix> &a¡Su modo de juego ha sido cambiado a &eSupervivencia&a!"
+gamemode-creative: "<prefix> &a¡Su modo de juego ha sido cambiado a &eCreativo&a!"
+gamemode-adventure: "<prefix> &a¡Su modo de juego ha sido cambiado a &eAventura&a!"
+gamemode-spectator: "<prefix> &a¡Su modo de juego ha sido cambiado a &eEspectador&a!"
+gamemode-survival-target: "<prefix> &e¡El modo de juego para el jugador &3<target-name> &eha sido cambiado a &6Supervivencia&e!"
+gamemode-creative-target: "<prefix> &e¡El modo de juego para el jugador &3<target-name> &eha sido cambiado a &6Creativo&e!"
+gamemode-adventure-target: "<prefix> &e¡El modo de juego para el jugador &3<target-name> &eha sido cambiado a &6Aventura&e!"
+gamemode-spectator-target: "<prefix> &e¡El modo de juego para el jugador &3<target-name> &eha sido cambiado a &6Espectador&e!"
+
+# -- Alert Messages --
+alert-usage: "<prefix> &f¡Especifica el &emensaje &fa enviar!"
+alert-format: "&c&lALERT &8> &f"
+
+# Scoreboard Spanish Configurations.
+scoreboard:
+  # -- Scoreboard Messages --
+  usage: "<prefix> &fPara cambiar el título de la Scoreboard &7-> &e[title] &8| &fPara alternar la visibilidad &7-> &e[toggle]"
+  enabled: "<prefix> &a¡La Scoreboard ha sido &eActivada&a!"
+  disabled: "<prefix> &c¡La Scoreboard ha sido &eDesactivada&c!"
+  title-changed: "<prefix> &fEl &etítulo de la Scoreboard &fha sido cambiado a &7-> &a<scoreboard-title>"
+  title-warning: "<prefix> &c¡No puedes modificar el título de la Scoreboard si el &título animado &cesta activado!"
+  # -- Scoreboard Messages --
+
+  # Scoreboard Animation Lines.
+  title-animated:
+    - ""
+    - ""
+    - ""
+    - ""
+
+  # Scoreboard Default Title.
+  default-title: ""
+
+  # Scoreboard Content.
+  # Allows max 15 lines.
+
+  # NOTE: 1.12 or lower accepts only 30 length chars.
+  lines: |-
+    &l
+    &l
+    &l
+    &l
+    &l
+    &l
+    &l
+    &l
+
+# -- Tab-List Spanish Configurations --
+tab-list:
+  # -- Tab-List Messages --
+  enabled: "<prefix> &a¡El tab-list ha sido &eActivado&a!"
+  disabled: "<prefix> &c¡El tab-list ha sido &eDesactivado&c!"
+  # -- Tab-List Messages --
+
+  # Tab-List Header Text.
+  header: ""
+
+  # Tab-List Footer Text.
+  footer: ""
+
+# -- Custom Items Spanish Configurations --
+items:
+  # Spanish Configuration for 'example' custom item.
+  example:
+    # Item Display Name.
+    display-name: "&bEjemplo &7| &fClic Derecho"
+
+    # Item Lore Text.
+    lore: |-
+      &f¡Esto es un &7item de ejemplo&f!
+
+    # Items Actions.
+    actions:
+      - "[SOUND] ENTITY_EXPERIENCE_ORB_PICKUP;1;1"
+      - "[POTION_EFFECT] SPEED;100;2"
+
+# -- Custom Commands English Configurations --
+commands:
+  # Configuration for 'example' custom command.
+  example:
+    # Custom Command Identifier/Name.
+    # Don't add the '/' character if isn't necessary.
+    id: example
+
+    # Custom Command Permission.
+    permission: "fancylobby.custom-cmd.example"
+
+    # Custom Command Description.
+    description: "Este comando te da [Velocidad II] y envía un título!"
+
+    # Custom Command Actions.
+    actions:
+      - "[POTION_EFFECT] SPEED;100;2"
+      - "[TITLE] &fHas ejecutado el comando &eejemplo&f!;&fHas recibido &bVelocidad II;20;60;20"

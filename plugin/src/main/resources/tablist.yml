@@ -1,0 +1,49 @@
+# NOTE: The tab-list content can be customized into the language files of plugin!
+# Do you want to enable the tab-list feature?
+allow: true
+
+# Do you want to modify the player list-name/name-tag?
+allow-editable-name: true
+
+# Permissions Groups:
+groups:
+  # Configs for 'default' group.
+  default:
+    # Player List Name Prefix.
+    tab-prefix: ""
+
+    # Player List Name Suffix.
+    tab-suffix: ""
+
+    # Player NameTag Prefix.
+    tag-prefix: ""
+
+    # Player NameTag Suffix.
+    tag-suffix: ""
+  vip:
+    tab-prefix: ""
+    tab-suffix: ""
+    tag-prefix: ""
+    tag-suffix: ""
+  admin:
+    tab-prefix: ""
+    tab-suffix: ""
+    tag-prefix: ""
+    tag-suffix: ""
+
+# Do you want to update the tab-list content every 'x' ticks amount?
+allow-refresh-task: true
+
+# Tab-List Refresh Rate.
+# Reference: 20 ticks -> 1 second.
+refresh-task-rate: 20
+
+# Do you want to specify worlds where the tab-list format is available?
+allow-some-worlds: true
+
+# List of worlds where the tab-list can be viewed.
+# If some world isn't specified, will be show to player an empty format on the tab-list.
+allowed-worlds: [ world ]
+
+# For the tab-list, you can use the tag '<br>' for do a line jump.
+# Example: header -> <br>Minecraft Server<br> | footer -> <br>&emc.yourServer.net
