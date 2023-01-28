@@ -9,6 +9,9 @@ allowed-worlds: [ world ]
 # (BETA) Do you want to use the animated-title?
 allow-animated-title: true
 
+# Do you want to update the scoreboard content every 'x' ticks amount?
+allow-body-refresh: true
+
 # Refresh rate for the title.
 # Reference: 20 ticks -> 1 second.
 #
