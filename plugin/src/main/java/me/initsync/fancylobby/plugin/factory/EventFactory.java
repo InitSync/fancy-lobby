@@ -7,6 +7,12 @@ import org.bukkit.plugin.PluginManager;
 import java.util.Objects;
 
 public interface EventFactory {
+	/**
+	 * Returns a new Builder.
+	 *
+	 * @param plugin An instance of FancyLobby.
+	 * @return A new Builder instance.
+	 */
 	static Loader newLoader(FancyLobby plugin) {
 		return new Loader(plugin);
 	}

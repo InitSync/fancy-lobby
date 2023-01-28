@@ -9,6 +9,12 @@ import org.bukkit.command.TabCompleter;
 import java.util.Objects;
 
 public interface CommandFactory {
+	/**
+	 * Returns a new Builder.
+	 *
+	 * @param plugin An instance of FancyLobby.
+	 * @return A new Builder instance.
+	 */
 	static Builder newLoader(FancyLobby plugin) {
 		return new Builder(plugin);
 	}
