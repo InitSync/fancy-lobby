@@ -36,8 +36,8 @@ public class ScoreboardManagerImpl implements ScoreboardManager {
 		this.languageManager = Objects.requireNonNull(languageManager, "The LanguageManager object is null.");
 		
 		cachedBoards = new HashMap<>();
-		if (configurationHandler.condition("", "scoreboard.yml", "scoreboard.allow-body-refresh")) cachedBoardTasks = new HashMap<>();
-		if (configurationHandler.condition("", "scoreboard.yml", "scoreboard.allow-title-refresh")) cachedTitleTasks = new HashMap<>();
+		if (configurationHandler.condition("", "scoreboard.yml", "allow-body-refresh")) cachedBoardTasks = new HashMap<>();
+		if (configurationHandler.condition("", "scoreboard.yml", "allow-animated-title")) cachedTitleTasks = new HashMap<>();
 	}
 	
 	@Override
@@ -49,7 +49,7 @@ public class ScoreboardManagerImpl implements ScoreboardManager {
 	public void create(Player player) {
 		checkNotNull(player, "The player is null.");
 		
-		if (!configurationHandler.textList("", "scoreboard.yml", "scoreboard.allowed-worlds", false).contains(player.getWorld().getName())) {
+		if (!configurationHandler.textList("", "scoreboard.yml", "allowed-worlds", false).contains(player.getWorld().getName())) {
 			return;
 		}
 		
@@ -60,15 +60,23 @@ public class ScoreboardManagerImpl implements ScoreboardManager {
 		
 		final FileConfiguration languageConfig = languageManager.getPlayerLanguage(playerId).getLanguageConfig();
 		
-		if (configurationHandler.condition("", "scoreboard.yml", "scoreboard.allow-animated-title")) {
+		if (configurationHandler.condition("", "scoreboard.yml", "allow-animated-title")) {
+			cachedTitleTasks.put(
+				 playerId,
+				 new ScoreboardTitleTask(
+					  board,
+					  languageConfig.getStringList("scoreboard.title-animated"),
+					  configurationHandler.number("", "scoreboard.yml", "title-refresh-rate")
+				 )
+			);
+			
 			board.updateTitle(board.getTitle());
-		} else {
-			board.updateTitle(PlaceholderUtils.parse(player, languageConfig.getString("scoreboard.title")));
 		}
+		else board.updateTitle(PlaceholderUtils.parse(player, languageConfig.getString("scoreboard.default-title")));
 		
 		Bukkit.getScheduler().runTaskTimerAsynchronously(plugin, () -> {
 			board.updateLines(PlaceholderUtils.parse(player, languageConfig.getString("scoreboard.lines")));
-		}, 0L, configurationHandler.number("", "scoreboard.yml", "scoreboard.body-refresh-rate"));
+		}, 0L, configurationHandler.number("", "scoreboard.yml", "body-refresh-rate"));
 	}
 	
 	@Override
@@ -99,7 +107,7 @@ public class ScoreboardManagerImpl implements ScoreboardManager {
 		checkNotNull(uuid, "The uuid is null.");
 		checkNotNull(newTitle, "The title text is null.");
 		
-		if (configurationHandler.condition("", "scoreboard.yml", "scoreboard.allow-title-refresh")) return;
+		if (configurationHandler.condition("", "scoreboard.yml", "allow-animated-title")) return;
 		
 		final FancyBoard board = getScoreboard(uuid);
 		if (board == null) return;
@@ -117,7 +125,7 @@ public class ScoreboardManagerImpl implements ScoreboardManager {
 		
 		if (!cachedBoards.containsKey(uuid)) return;
 		
-		if (configurationHandler.condition("", "scoreboard.yml", "scoreboard.allow-title-refresh")) {
+		if (configurationHandler.condition("", "scoreboard.yml", "allow-animated-title")) {
 			ScoreboardTitleTask titleTask = cachedTitleTasks.remove(uuid);
 			if (titleTask == null) return;
 			
@@ -125,7 +133,7 @@ public class ScoreboardManagerImpl implements ScoreboardManager {
 			titleTask = null;
 		}
 		
-		if (configurationHandler.condition("", "scoreboard.yml", "scoreboard.allow-body-refresh")) {
+		if (configurationHandler.condition("", "scoreboard.yml", "allow-body-refresh")) {
 			BukkitTask bodyTask = cachedBoardTasks.remove(uuid);
 			if (bodyTask == null) return;
 			
@@ -142,8 +150,8 @@ public class ScoreboardManagerImpl implements ScoreboardManager {
 	
 	@Override
 	public void clearCachedData() {
-		if (configurationHandler.condition("", "scoreboard.yml", "scoreboard.allow-body-refresh")) cachedBoardTasks.clear();
-		if (configurationHandler.condition("", "scoreboard.yml", "scoreboard.allow-title-refresh")) cachedTitleTasks.clear();
+		if (configurationHandler.condition("", "scoreboard.yml", "allow-body-refresh")) cachedBoardTasks.clear();
+		if (configurationHandler.condition("", "scoreboard.yml", "allow-animated-title")) cachedTitleTasks.clear();
 		
 		cachedBoards.clear();
 	}
